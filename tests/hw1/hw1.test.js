@@ -638,4 +638,203 @@ describe('HomeWork tasks Cycles', () => {
             })
         });
     });
+    describe('getFactValue', () => {
+        //GIVEN
+        const testData = [
+            {
+                a: 0,
+                expected: 1,
+            },
+            {
+                a: 1,
+                expected: 1,
+            },
+            {
+                a: 2,
+                expected: 2,
+            },
+            {
+                a: -3,
+                expected: null,
+            },
+            {
+                a: 4,
+                expected: 24,
+            },
+        ];
+
+        testData.forEach(data => {
+            const {a, expected} = data;
+            //WHEN
+            const actual = getFactValue(a);
+
+            it(`should return ${expected} when a = ${a}`, () => {
+                //THEN
+                assert.strictEqual(actual, expected);
+            })
+        });
+    });
+    describe('getSimpleValue', () => {
+        //GIVEN
+        const testData = [
+            {
+                a: 0,
+                expected: null,
+            },
+            {
+                a: 1,
+                expected: true,
+            },
+            {
+                a: 2,
+                expected: true,
+            },
+            {
+                a: -3,
+                expected: null,
+            },
+            {
+                a: 4,
+                expected: false,
+            },
+            {
+                a: 10,
+                expected: false,
+            },
+            {
+                a: 11,
+                expected: true,
+            },
+        ];
+
+        testData.forEach(data => {
+            const {a, expected} = data;
+            //WHEN
+            const actual = getSimpleValue(a);
+
+            it(`should return ${expected} when a = ${a}`, () => {
+                //THEN
+                assert.strictEqual(actual, expected);
+            })
+        });
+    });
+    describe('getSumNumbersValue', () => {
+        //GIVEN
+        const testData = [
+            {
+                a: 123,
+                expected: 6,
+            },
+            {
+                a: 0,
+                expected: 0,
+            },
+            {
+                a: 45,
+                expected: 9,
+            },
+            {
+                a: -3,
+                expected: -3,
+            },
+        ];
+
+        testData.forEach(data => {
+            const {a, expected} = data;
+            //WHEN
+            const actual = getSumNumbersValue(a);
+
+            it(`should return ${expected} when a = ${a}`, () => {
+                //THEN
+                assert.strictEqual(actual, expected);
+            })
+        });
+    });
+    describe('getMirrorValue', () => {
+        //GIVEN
+        const testData = [
+            {
+                a: 123,
+                expected: 321,
+            },
+            {
+                a: 0,
+                expected: 0,
+            },
+            {
+                a: 45,
+                expected: 54,
+            },
+            {
+                a: -39,
+                expected: -93,
+            },
+        ];
+
+        testData.forEach(data => {
+            const {a, expected} = data;
+            //WHEN
+            const actual = getMirrorValue(a);
+
+            it(`should return ${expected} when a = ${a}`, () => {
+                //THEN
+                assert.strictEqual(actual, expected);
+            })
+        });
+    });
+});
+
+describe('HomeWork tasks Funct', () => {
+    describe('getDayOfWeek', () => {
+        //GIVEN
+        const testData = [
+            {
+                day: 1,
+                expected: 'Monday',
+            },
+            {
+                day: 2,
+                expected: 'Tuesday',
+            },
+            {
+                day: 3,
+                expected: 'Wednesday',
+            },
+            {
+                day: 4,
+                expected: 'Thursday',
+            },
+            {
+                day: 5,
+                expected: 'Friday',
+            },
+            {
+                day: 6,
+                expected: 'Saturday',
+            },
+            {
+                day: 7,
+                expected: 'Sunday',
+            },
+            {
+                day: 0,
+                expected: 'undefined',
+            },
+            {
+                day: 8,
+                expected: 'undefined',
+            },
+        ];
+
+        testData.forEach(data => {
+            const {day, expected} = data;
+            //WHEN
+            const actual = getDayOfWeek(day);
+
+            it(`should return ${expected} when day = ${day}`, () => {
+                //THEN
+                assert.strictEqual(actual, expected);
+            })
+        });
+    });
 });

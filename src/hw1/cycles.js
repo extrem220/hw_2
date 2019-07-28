@@ -12,6 +12,10 @@ const getSumEvenValues = () => {
 }
 
 const getFactValue = (a) => {
+    if (a < 0) {
+        return null;
+    }
+
     let fact = 1;
     if (a === 1 || a === 0) {
         return fact;
@@ -25,6 +29,10 @@ const getFactValue = (a) => {
 }
 
 const getSimpleValue = (a) => {
+    if (a < 1) {
+        return null;
+    }
+
     for (let i = 2; i < a; i++) {
         if (a % i === 0) {
             return false;
